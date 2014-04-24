@@ -5,6 +5,10 @@
 [org 0x7c00]
 KERNEL_OFFSET equ 0x1000
 
+;some computers BIOS fucks up sometimes with ES register
+mov al, 0x0
+mov es, al
+
 mov [BOOT_DRIVE], dl
 
 mov bp, 0x9000 ; set the (16-bit) stack safely

@@ -13,3 +13,11 @@ git clone https://github.com/aplabs/bsos.git
 cd bsos
 make
 ```
+
+## Running
+With bochsrc and bochs CPU emulator installed the image file can be emulated.
+
+After it has been built with the instructions above, simply run:
+```
+bochs -q
+```

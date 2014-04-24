@@ -2,7 +2,7 @@
 ;	Bootstraps the system into 32-bit protected mode.
 ;	Author: William Woodruff, 2014
 
-;[org 0x7c00]
+[org 0x7c00]
 
 mov bp, 0x9000 ; set the (16-bit) stack safely
 mov sp, bp
@@ -29,7 +29,7 @@ BEGIN_PM: ; referenced in switch_to_pm.asm
 
 ; globals
 REAL_MODE_MSG db "Starting in real mode...", 0
-PROT_MODE_MSG db "Loaded 32-bit protected mode...", 13, 10, 0
+PROT_MODE_MSG db "Loaded 32-bit protected mode...", 0
 
 times 510-($-$$) db 0
 dw 0xaa55

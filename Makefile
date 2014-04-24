@@ -7,8 +7,3 @@ all:
 	nasm src/boot/boot.asm -I 'src/boot/' -f bin -o boot.bin
 	cat boot.bin kernel.bin > os-image
 	rm *.o *.bin
-
-	ld -o kernel.bin -Ttext 0x1000 kern_entry.o main.o --oformat binary
-	nasm src/boot/boot.asm -I 'src/boot/' -f bin -o boot.bin
-	cat boot.bin kernel.bin > os-image
-	rm *.o *.bin

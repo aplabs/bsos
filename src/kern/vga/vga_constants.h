@@ -28,4 +28,4 @@
 #define WHITE 0xF
 
 /* ORs two nibbles to create a color attribute */
-#define BUILD_ATTR(fg, bg) ((bg << 4) | fg )
+#define COLOR_ATTR(fg, bg) ((bg << 4) | fg )

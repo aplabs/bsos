@@ -3,6 +3,8 @@
 	Author: William Woodruff
 */
 
+#include "vga/vga_constants.h"
+
 void main(void)
 {
 	char* video_memory = (char*) VIDEO_ADDRESS;

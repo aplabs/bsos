@@ -6,8 +6,8 @@
 KERNEL_OFFSET equ 0x1000
 
 ;some computers BIOS fucks up sometimes with ES register
-mov al, 0x0
-mov es, al
+mov ax, 0x0
+mov es, ax
 
 mov [BOOT_DRIVE], dl
 

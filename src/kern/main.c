@@ -3,7 +3,7 @@
 	Author: William Woodruff
 */
 
-#include "vga/vga_constants.h"
+#include "drivers/vga_constants.h"
 
 void main(void)
 {

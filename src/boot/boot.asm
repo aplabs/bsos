@@ -1,6 +1,6 @@
 ;	boot.asm
 ;	Bootstraps the system into 32-bit protected mode.
-;	Author: William Woodruff, 2014
+;	Authors: William Woodruff, Brian Hong 2014
 
 [org 0x7c00]
 KERNEL_OFFSET equ 0x1000

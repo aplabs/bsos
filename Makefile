@@ -14,7 +14,7 @@ kernel.bin: kern_entry.o ${OBJ}
 	ld -o $@ -Ttext 0x1000 $^ --oformat binary
 
 %.o: %.c ${CHDR}
-	gcc -ffreestanding -c $< -o $@
+	gcc -ffreestanding -std=gnu99 -c $< -o $@
 
 kern_entry.o:
 	nasm src/kern/kern_entry.asm -f elf64 -o $@

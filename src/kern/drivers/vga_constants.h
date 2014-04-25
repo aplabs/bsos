@@ -3,7 +3,12 @@
 	Author: William Woodruff, 2014
 */
 
-#define VIDEO_ADDRESS 0xb8000
+#ifndef VGA_CONSTANTS_H
+#define VGA_CONSTANTS_H
+
+#define VIDEO_MEMORY 0xb8000
+#define REG_SCREEN_CTRL 0x3d4
+#define REG_SCREEN_DATA 0x3d5
 
 /* dimensions */
 #define VGA_ROWS 25
@@ -28,4 +33,6 @@
 #define WHITE 0xF
 
 /* ORs two nibbles to create a color attribute */
-#define COLOR_ATTR(fg, bg) ((bg << 4) | fg )
+#define COLOR_ATTR(fg, bg) ((char) ((bg << 3) | (1 << 4) | (fg >> 4)))
+
+#endif /* VGA_CONSTANTS_H */

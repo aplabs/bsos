@@ -22,6 +22,7 @@ kern_entry.o:
 clean:
 	rm -rf *.bin *.o os-image
 	rm -rf src/kern/*.o 
+	rm -rf src/kern/drivers/*.o
 
 64:
 	gcc -ffreestanding -std=gnu99 -c src/kern/main.c -o main.o

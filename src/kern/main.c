@@ -7,7 +7,6 @@
 
 void main(void)
 {
-	//__print_char('X', 0, 0, COLOR_ATTR(WHITE, BLACK));
-	//__write_str((char) 0x7, "test");
-	__write_str(COLOR_ATTR(WHITE, BLACK), "test123456");
+	clear_screen();
+	__write_str(COLOR_ATTR(WHITE, BLACK), "Loading...");
 }

@@ -7,9 +7,9 @@
 
 int get_cursor(void)
 {
-	port_byte_out(REG_SCREEN_CTRL, 14);
+	port_byte_out(REG_SCREEN_CTRL, 0x0e);
 	int offset = port_byte_in(REG_SCREEN_DATA) << 8;
-	port_byte_out(REG_SCREEN_CTRL, 15);
+	port_byte_out(REG_SCREEN_CTRL, 0x0f);
 	offset += port_byte_in(REG_SCREEN_DATA);
 
 	return offset * 2;
@@ -26,41 +26,7 @@ void set_cursor(int offset)
 
 int get_screen_offset(int row, int col)
 {
-	return ((row * 80) - 4) * 2;
-}
-
-void __print_char(char ch, int row, int col, char attr)
-{
-	unsigned char* video_memory = (unsigned char*) VIDEO_MEMORY;
-
-	if (!attr)
-	{
-		attr = COLOR_ATTR(WHITE, BLACK);
-	}
-
-	int offset;
-	if (row >= 0 && col >= 0)
-	{
-		offset = get_screen_offset(row, col);
-	}
-	else
-	{
-		offset = get_cursor();
-	}
-
-	if (ch == '\n')
-	{
-		int rows = offset / (2 * VGA_COLS);
-		offset = get_screen_offset(79, rows);
-	}
-	else
-	{
-		video_memory[offset] = ch;
-		video_memory[offset + 1] = attr;
-	}
-
-	offset += 2;
-	set_cursor(offset);
+	return ((row * 80) + col) * 2;
 }
 
 void __write_str(char attr, const char* str)
@@ -72,4 +38,20 @@ void __write_str(char attr, const char* str)
 		*video_memory++ = *str++;
 		*video_memory++ = attr;
 	}
+
+	int offset = ((int) video_memory) - VIDEO_MEMORY;
+	set_cursor(offset);
+}
+
+void clear_screen(void)
+{
+	unsigned char* video_memory = (unsigned char*) VIDEO_MEMORY;
+
+	for (int i = 0; i < 2000; i++)
+	{
+		*video_memory++ = ' ';
+		*video_memory++ = 0x0F;
+	}
+
+	set_cursor(get_screen_offset(0, 0));
 }

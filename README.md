@@ -1,10 +1,10 @@
-bsos
+BSOS
 ===
 
 Experimental \*nix-like OS.
 
 ## Building
-As of right now, bsos is incredibly simple and only builds on Linux  platforms.
+As of right now, BSOS is incredibly simple and only builds on Linux  platforms.
 However, once built, the "os-image" file (included in the repo), can be run on any x86 system.
 
 To build, make sure that you have gcc and nasm installed:

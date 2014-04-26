@@ -24,6 +24,8 @@ clean:
 	rm -rf src/kern/*.o 
 	rm -rf src/kern/drivers/*.o
 
+# DO NOT USE THE TARGETS BELOW
+
 64:
 	gcc -ffreestanding -std=gnu99 -c src/kern/main.c -o main.o
 	nasm src/kern/kern_entry.asm -f elf64 -o kern_entry.o

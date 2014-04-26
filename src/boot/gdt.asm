@@ -5,8 +5,7 @@
 gdt_start:
 
 gdt_null:
-	dd 0x0
-	dd 0x0
+	times 2 dd 0x0
 
 gdt_code:
 	dw 0xffff

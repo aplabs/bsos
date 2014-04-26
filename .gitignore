@@ -1,0 +1,3 @@
+# ignore objs and binaries
+*.o
+*.bin

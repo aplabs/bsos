@@ -5,6 +5,9 @@
 
 #include "vga.h"
 
+/*	get_cursor
+	get the current offset of the cursor in memory
+*/
 int get_cursor(void)
 {
 	port_byte_out(REG_SCREEN_CTRL, 0x0e);
@@ -15,6 +18,9 @@ int get_cursor(void)
 	return offset * 2;
 }
 
+/*	set_cursor
+	set the position of the cursor to the given offset
+*/
 void set_cursor(int offset)
 {
 	offset /= 2;
@@ -24,11 +30,17 @@ void set_cursor(int offset)
 	port_byte_out(REG_SCREEN_DATA, (unsigned char) ((offset >> 8) & 0xff));
 }
 
+/*	get_screen_offset
+	return the memory offset representative of the given VGA row/column pair
+*/
 int get_screen_offset(int row, int col)
 {
 	return ((row * 80) + col) * 2;
 }
 
+/*	__write_str
+	write a null-terminated string to the screen, setting the cursor after the string
+*/
 void __write_str(char attr, const char* str)
 {
 	unsigned char* video_memory = (unsigned char*) VIDEO_MEMORY;
@@ -39,10 +51,12 @@ void __write_str(char attr, const char* str)
 		*video_memory++ = attr;
 	}
 
-	int offset = ((int) video_memory) - VIDEO_MEMORY;
-	set_cursor(offset);
+	set_cursor((int) (video_memory - VIDEO_MEMORY));
 }
 
+/*	clear_screen
+	clear the screen entirely, setting the cursor to the top left corner
+*/
 void clear_screen(void)
 {
 	unsigned char* video_memory = (unsigned char*) VIDEO_MEMORY;

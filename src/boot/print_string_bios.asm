@@ -6,7 +6,7 @@
 print_string_bios:
 	mov ah, 0x0e ; output
 	.next:
-	mov al, [bx] ; load a byte from si
+	mov al, [bx] ; load a byte from bx
 	inc bx ; increment to the next byte
 	cmp al, 0
 	je .done ; if the current byte is 0 (null), return

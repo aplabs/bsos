@@ -19,9 +19,9 @@ call print_string_bios
 
 call load_kernel
 
-call switch_to_pm
+call switch_to_pm ; jumps to BEGIN_PM
 
-jmp $
+jmp $ ; never reached
 
 %include "print_string_bios.asm"
 %include "disk_load.asm"

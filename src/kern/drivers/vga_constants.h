@@ -32,6 +32,9 @@
 #define LBROWN 0xE
 #define WHITE 0xF
 
+/* Special Characters */
+#define NEWLINE 0xA
+
 /* ORs two nibbles to create a color attribute */
 #define COLOR_ATTR(fg, bg) ((char) ((bg << 3) | (1 << 4) | (fg >> 4)))
 

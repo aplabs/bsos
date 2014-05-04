@@ -44,12 +44,23 @@ int get_screen_offset(int row, int col)
 void __write_str(char attr, const char* str)
 {
 	unsigned char* video_memory = (unsigned char*) VIDEO_MEMORY;
+	video_memory += get_cursor();
 
 	while (*str)
 	{
+		if(*str == NEWLINE)
+		{
+			int offset = (int) (video_memory - VIDEO_MEMORY);
+			offset = offset % (VGA_COLS * 2);
+			offset = (VGA_COLS * 2) - offset;
+			video_memory += offset;
+			str++;
+		}else{
 		*video_memory++ = *str++;
 		*video_memory++ = attr;
+		}
 	}
+
 
 	set_cursor((int) (video_memory - VIDEO_MEMORY));
 }

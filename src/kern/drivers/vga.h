@@ -13,6 +13,7 @@ int get_cursor(void);
 void set_cursor(int offset);
 int get_screen_offset(int row, int col);
 void __write_str(char attr, const char* str);
+void __print_str(char attr, const char* str);
 void clear_screen(void);
 
 #endif /* VGA_H */

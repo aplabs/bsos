@@ -44,6 +44,24 @@ int get_screen_offset(int row, int col)
 void __write_str(char attr, const char* str)
 {
 	unsigned char* video_memory = (unsigned char*) VIDEO_MEMORY;
+
+	while (*str)
+	{
+		*video_memory++ = *str++;
+		*video_memory++ = attr;
+	}
+
+
+	set_cursor((int) (video_memory - VIDEO_MEMORY));
+}
+
+/*	__print_str
+	do the same as __write_str, but prints at the cursor location
+	and new line with '\n' character
+*/
+void __print_str(char attr, const char* str)
+{
+	unsigned char* video_memory = (unsigned char*) VIDEO_MEMORY;
 	video_memory += get_cursor();
 
 	while (*str)

@@ -1,4 +1,9 @@
-#IF_NOT_DEF KERN_CONSTANTS_H
+/*	kern_constants.h
+	Defines constants for memory management.
+	Author: Pawel Czarnecki (VinnyOG)
+*/
+
+#ifndef KERN_CONSTANTS_H
 #define KERN_CONSTANTS_H
 
 //all sizes in byes
@@ -7,4 +12,4 @@
 #define INIT_MAT_SIZE 1024   //1024 entries into the Memory Allocation Table
 
 
-#ENDIF
+#endif /* KERN_CONSTANTS_H */

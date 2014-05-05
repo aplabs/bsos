@@ -1,11 +1,12 @@
-//Mouse.h
-//Alex Gould (lyra833)
-//This file contains some basic values and networking functions for a PS/2 mouse. It's nowhere near done.
-//TO DO:
-//	Include a struct with some common values and constructors
-//	Add some common network functions
-//NOT AS IMPORTANT:
-//	Add manufacturer specific commands
+/*	Mouse.h
+	Author: Alex Gould (lyra833)
+	This file contains some basic values and networking functions for a PS/2 mouse. It's nowhere near done.
+	TO DO:
+		Include a struct with some common values and constructors
+		Add some common network functions
+	NOT AS IMPORTANT:
+		Add manufacturer specific commands
+*/
 
 #ifndef MOUSE_H
 #define MOUSE_H

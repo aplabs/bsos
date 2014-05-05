@@ -12,12 +12,12 @@ switch_to_pm:
 	or eax, 0x1
 	mov cr0, eax
 
-	jmp CODE_SEGMENT:init_pm ; far jump to 32-bit code, flushing CPU pipeline
+	jmp CODE_SEG:init_pm ; far jump to 32-bit code, flushing CPU pipeline
 
 [bits 32]
 
 init_pm:
-	mov ax, DATA_SEGMENT
+	mov ax, CODE_SEG
 	mov ds, ax
 	mov ss, ax
 	mov es, ax

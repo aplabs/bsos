@@ -12,7 +12,6 @@ To build, make sure that you have gcc and nasm installed:
 git clone https://github.com/aplabs/bsos.git
 cd bsos
 make
-make 32 # on 32-bit linux
 ```
 
 ## Running

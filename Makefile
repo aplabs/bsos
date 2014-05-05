@@ -20,24 +20,8 @@ kern_entry.o:
 	nasm src/kern/kern_entry.asm -f elf64 -o $@
 
 clean:
-	rm -rf *.bin *.o os-image
+	rm -rf *.bin *.o
 	rm -rf src/kern/*.o 
 	rm -rf src/kern/drivers/*.o
+	rm -i os-image # ask to remove the image
 
-# DO NOT USE THE TARGETS BELOW
-
-64:
-	gcc -ffreestanding -std=gnu99 -c src/kern/main.c -o main.o
-	nasm src/kern/kern_entry.asm -f elf64 -o kern_entry.o
-	ld -o kernel.bin -Ttext 0x1000 kern_entry.o main.o --oformat binary
-	nasm src/boot/boot.asm -I 'src/boot/' -f bin -o boot.bin
-	cat boot.bin kernel.bin > os-image
-	rm *.o *.bin
-
-32:
-	gcc -ffreestanding -std=gnu99 -c src/kern/main.c -o main.o
-	nasm src/kern/kern_entry.asm -f elf -o kern_entry.o
-	ld -o kernel.bin -Ttext 0x1000 kern_entry.o main.o --oformat binary
-	nasm src/boot/boot.asm -I 'src/boot/' -f bin -o boot.bin
-	cat boot.bin kernel.bin > os-image
-	rm *.o *.bin

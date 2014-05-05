@@ -4,5 +4,7 @@
 */
 
 struct __memory_segment{
-  unsigned long absolute_address;
+  unsigned int real_address;
+  unsigned int real_size;
+  unsigned int distance_to_next_segment;
 };

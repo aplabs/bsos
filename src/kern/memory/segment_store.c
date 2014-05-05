@@ -1,7 +1,7 @@
 /* segment_store.c will define code that keeps track of kernel-defined memory segments
    -Pawel
 */
-#include "kern_constants"
+#include "../kern_constants"
 
 int __insert_segment(struct* __memory_segment);
 

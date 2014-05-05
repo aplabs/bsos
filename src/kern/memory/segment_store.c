@@ -1,7 +1,9 @@
-/* segment_store.c will define code that keeps track of kernel-defined memory segments
-   -Pawel
+/*	segment_store.c
+	Defines functions for managing memory segments.
+	Author: Pawel Czarnecki
 */
-#include "../kern_constants"
+
+#include "../kern_constants.h"
 
 //function prototypes (to be put into own header file)
 

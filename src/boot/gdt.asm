@@ -35,6 +35,5 @@ gdt_descriptor: ; label the descriptor
 ;0x08 -> CODE
 ;0x10 -> DATA
 
-
-DATA_SEG equ gdt_code - gdt_start
-CODE_SEG equ gdt_data - gdt_start
+CODE_SEG equ gdt_code - gdt_start
+DATA_SEG equ gdt_data - gdt_start

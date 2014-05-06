@@ -9,7 +9,7 @@ Style and programming conventions for BSOS
 ## Assembly Files
 * Use, at most, one level of indentation. Do *NOT* do this:
 
-```
+```asm
 	mov ax, 5
 	.mylbl:
 		mov bx, 5

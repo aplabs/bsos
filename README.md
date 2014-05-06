@@ -21,3 +21,7 @@ After it has been built with the instructions above, simply run:
 ```
 bochs -q
 ```
+
+## Contributing
+Want to contribute to BSOS? Feel free to fork, modify, and issue pull requests.
+Please follow our [coding conventions](./STANDARDS.md) in your contributions.

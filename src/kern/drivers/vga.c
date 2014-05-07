@@ -73,9 +73,11 @@ void __print_str(char attr, const char* str)
 			offset = (VGA_COLS * 2) - offset;
 			video_memory += offset;
 			str++;
-		}else{
-		*video_memory++ = *str++;
-		*video_memory++ = attr;
+		}
+		else
+		{
+			*video_memory++ = *str++;
+			*video_memory++ = attr;
 		}
 	}
 
@@ -83,27 +85,25 @@ void __print_str(char attr, const char* str)
 	set_cursor((int) (video_memory - VIDEO_MEMORY));
 }
 
-/*
-	__print_binary
+/*	__print_binary
 	prints binary representation of the input byte
 */
 void __print_binary(char attr, unsigned char b){
-	char* str = "0b22222222"; //placeholder for size
+	char* str = "0b22222222"; 
 	char* loc = str++; //offset since beginning has 0b
 	
-	for(int i = 7; i >= 0; i--){
+	for(int i = 7; i >= 0; i--)
+	{
 		int a = b & (1 << i);
 		if(a == 0)
 			*++str = '0';
 		else
 			*++str = '1';
 	}
-	//*++str = '\n'; //newline
 	__print_str(attr, loc);
 }
 
-/*
-	__print_hex
+/*	__print_hex
 	prints hex representation of the input byte
 */
 void __print_hex(char attr, unsigned char b){

@@ -23,5 +23,5 @@ clean:
 	rm -rf *.bin *.o
 	rm -rf src/kern/*.o 
 	rm -rf src/kern/drivers/*.o
-	rm -i os-image # ask to remove the image
+	rm -if os-image # ask to remove the image
 

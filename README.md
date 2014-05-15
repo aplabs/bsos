@@ -25,7 +25,8 @@ bochs -q
 ## Contributing
 Want to contribute to BSOS? Feel free to fork, modify, and issue pull requests.
 
-Please follow our [coding conventions](./STANDARDS.md) in your contributions.
+Please follow our [coding conventions](bsos/MD Files/STANDARDS.md) in your contributions.
+Also, feel free to look at our [To Do list](bsos/MD Files/TO DO.md).
 
 ## Resources
 * [Building a Simple Operating System -from Scratch](http://www.cs.bham.ac.uk/~exr/lectures/opsys/10_11/lectures/os-dev.pdf)

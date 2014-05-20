@@ -135,6 +135,7 @@ enum KEYCODES
 	KEY_SCROLLLOCK = 0x4010,
 	KEY_PAUSE = 0x4011,
 	KEY_UNKNOWN
+	FirstKey = KEY_SPACE, LastKey = KEY_PAUSE
 };
 
 #endif /* KEYBOARD_H */

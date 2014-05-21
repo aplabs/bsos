@@ -6,6 +6,25 @@
 #ifndef KEYBOARD_H
 #define KEYBOARD_H
 
+struct keyboard
+{
+    uint64_t          keybuf[(4K >> 3)];
+    int32_t           keyvalbuf[(4K >> 3)];
+    volatile long     keylk;
+    uint64_t         *curkey;
+    uint64_t         *lastkey;
+    int32_t          *curkeyval;
+    int32_t          *lastkeyval;
+    int32_t           keytab1b[128] __declspec(align((4K)));
+    int32_t           keytabmb[128];
+    int32_t           keytabup[128];
+    struct mousestate mousestate;
+    int32_t           modmask;
+};
+
+void mapKeys(void);
+void interrupt(void);
+
 enum KEYCODES
 {
 	KEY_SPACE = ' ',

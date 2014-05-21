@@ -22,6 +22,7 @@ struct keyboard
     int32_t           modmask;
 };
 
+inline void startKeyboard(void);
 void mapKeys(void);
 void interrupt(void);
 

@@ -43,7 +43,7 @@ void mapKeys(void)
 {
     for (int i = FirstKey; i <= LastKey; ++i)
 	{
-        new Key((KEYCODES)i);
+        newKey((KEYCODES)i); //Oops. [it used to be "new Key"
     }
     return;
 }

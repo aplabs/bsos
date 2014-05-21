@@ -10,15 +10,15 @@ extern void *irqvec[];
 
 static struct keyboard keyboard __attribute__ ((__aligned__(4K))); //I have no idea if this number is right...
 #define newKey(hex)                                             \
-    (((((hex) >> 8) & 0xff) == PS2KBD_UP_BYTE)                         \
+    (((((hex) >> 8) & 0xff) == 0xf0)                         \
      ? (keyboard.keytabup[hex >> 16] = hex##_SYM | 0x80)       \
-     : ((((hex) & 0xff) == PS2KBD_PREFIX_BYTE)                         \
+     : ((((hex) & 0xff) == 0xe0)                         \
         ? (keyboard.keytabmb[hex >> 8] = hex##_SYM,                     \
            keyboard.keytabup[hex >> 8] = hex##_SYM | 0x80)     \
         : (keyboard.keytab1b[hex] = hex##_SYM,                          \
            keyboard.keytabup[hex] = hex##_SYM | 0x80)))
 
-void startKeyboard(void)
+inline void startKeyboard(void)
 {
     uint8_t u8;
     __asm__ ("outb %%b0, %%w1\n" : : "a" (0xf4), "Nd" (0x60));

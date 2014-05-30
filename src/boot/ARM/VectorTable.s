@@ -5,7 +5,9 @@
 //*****************************************************************************
 //
 // The vector table.
-// This relies on the linker script to place at correct location in memory.
+// This relies on a linker script to place at correct location in memory.
+//
+// Code courtesy of Mark Ding and the OS-Dev Wiki.
 //
 //*****************************************************************************
     .section .isr_vector

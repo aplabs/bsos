@@ -4,7 +4,7 @@
 	Author: Alex Gould (lyra833)
 */
 
-#include <keyboard.h>
+#include "keyboard.h"
 
 extern void *irqvec[];
 

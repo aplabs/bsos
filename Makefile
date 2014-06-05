@@ -8,7 +8,7 @@ os-image: boot.bin kernel.bin
 	cat $^ > os-image
 
 boot.bin:
-	nasm src/boot/x86/boot.asm -f bin -I 'src/boot/' -o $@
+	nasm src/boot/x86/boot.asm -f bin -I 'src/boot/x86/' -o $@
 
 kernel.bin: kern_entry.o ${OBJ}
 	ld -o $@ -Ttext 0x1000 $^ --oformat binary

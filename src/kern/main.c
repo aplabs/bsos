@@ -9,4 +9,10 @@ void main(void)
 {
 	clear_screen();
 	__write_str(COLOR_ATTR(WHITE, BLACK), "Loading...");
+
+	/* outlining below */
+	/*
+	kbd_init();
+	fsck_init();
+	*/
 }

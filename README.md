@@ -2,6 +2,7 @@ BSOS
 ===
 
 Experimental \*nix-like OS.
+Going might slow or stop on our part as we enter summer. Of course, everyone is still welcome to contribute! 
 
 ## Building
 As of right now, BSOS is incredibly simple and only builds on Linux  platforms.

@@ -9,11 +9,8 @@
 #include "vga_constants.h"
 #include "port_io.h"
 
-int get_cursor(void);
-void set_cursor(int offset);
-int get_screen_offset(int row, int col);
-void __write_str(char attr, const char* str);
-void __print_str(char attr, const char* str);
+void printch(char ch);
+void prints(char* str);
 void __print_binary(char attr, unsigned char c);
 void __print_hex(char attr, unsigned char c);
 void clear_screen(void);
